@@ -1,0 +1,212 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>How to make a blog for free</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=752b2c7e78">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://localhost:2368/how-to-make-a-blog-for-free/">
+    
+    <meta property="og:site_name" content="irruncibly">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to make a blog for free">
+    <meta property="og:description" content="I made this blog for free, and so can you. I created it using the Ghost framework and hosted it through my GitHub pages, then added free Disqus comments. Here are the steps I took and some links to the...">
+    <meta property="og:url" content="http://localhost:2368/how-to-make-a-blog-for-free/">
+    <meta property="article:published_time" content="2015-04-02T18:14:59.334Z">
+    <meta property="article:modified_time" content="2015-04-04T03:54:33.022Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How to make a blog for free">
+    <meta name="twitter:description" content="I made this blog for free, and so can you. I created it using the Ghost framework and hosted it through my GitHub pages, then added free Disqus comments. Here are the steps I took and some links to the...">
+    <meta name="twitter:url" content="http://localhost:2368/how-to-make-a-blog-for-free/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "irruncibly",
+    "author": {
+        "@type": "Person",
+        "name": "Steve Webster",
+        "image": "http://localhost:2368/content/images/2015/04/last_autumn_hike.jpeg",
+        "url": "http://localhost:2368/author/steve",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "How to make a blog for free",
+    "url": "http://localhost:2368/how-to-make-a-blog-for-free/",
+    "datePublished": "2015-04-02T18:14:59.334Z",
+    "dateModified": "2015-04-04T03:54:33.022Z",
+    "description": "I made this blog for free, and so can you. I created it using the Ghost framework and hosted it through my GitHub pages, then added free Disqus comments. Here are the steps I took and some links to the..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="irruncibly" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://localhost:2368">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="http://localhost:2368/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">How to make a blog for free</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-04-02">02 April 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>I made this blog for free, and so can you. I created it using the Ghost framework and hosted it through my GitHub pages, then added free Disqus comments. Here are the steps I took and some links to the various instructions I read.</p>
+
+<p>My main source of  helpful instructions from LED Technica. Before I direct you there, make sure that you have installed the following:</p>
+
+<ol>  
+  <li>Python (from <a href="https://pip.pypa.io/en/latest/installing.html">this    site</a>)
+  </li>
+  <li>Node.js (available <a href="https://nodejs.org">here</a>)     </li>
+</ol>  
+
+<p>If you don't remember whether you have installed them, type into your terminal:</p>
+
+<pre><code>$ which python
+</code></pre>
+
+<p>This returns "/usr/bin/python", or some similar file path. Same for Node.js:</p>
+
+<pre><code>$ which node
+&gt;&gt;/usr/local/bin/node
+</code></pre>
+
+<p>Also make sure that your Python includes pip, a Python package manager:</p>
+
+<pre><code>$ which pip
+&gt;&gt;/usr/local/bin/pip
+</code></pre>
+
+<p>Install pip if you do not have it (<a href="https://pip.pypa.io/en/latest/installing.html">here's how</a>).  </p>
+
+<p>Once you have installed each of the above, you are ready to walk through <a href="http://ledtechnica.com/free-ghost-hosting-on-github-pages/">LED Technica's instructions</a>. The basic process is:  </p>
+
+<ol>  
+  <li>Run a Ghost blog with node.js locally (i.e., using my computer as a server so only I can see it).</li>
+  <li>Use a Python package called Buster (as in <a href="http://www.imdb.com/title/tt0087332"></a><i>GhostBusters</i>) which will read the static files off my local server, and tidy them up for a push to GitHub. This step will require you to install Python and Pip .</li>
+</ol>
+
+<p>After finishing LED Technica's instructions, you still need to go to your 'ghost-0.5.8' (or 'ghost-#.#.#') folder and edit the 'config.js'. Find the 'config.production.url' <em>and</em> 'config.development.url' and replace them with your blog's url (such as '<a href="http://sdwebster.github.io/">http://sdwebster.github.io/</a>' or <a href="http://irruncibly.so">'</a><a href="http://irruncibly.so">http://irruncibly.so</a>', then restart your local server before calling Buster again. If you don't do this, your "Home" button will redirect to localhost:2368, and your blog will break.</p>
+
+<p>Later on, I added Disqus comments (also free of charge) by following <a href="http://support.ghost.org/add-disqus-to-my-ghost-blog/">these other instructions</a>. I had to dig around a bit when they started talking about my “post.hbs” file - it turned out to be at ".../ghost-0.5.8/content/themes/casper/post.hbs".</p>
+
+<p>At this point, my new blog was online at <a href="http://sdwebster.github.io">http://sdwebster.github.io</a>, entirely for free. The only drawback to doing it this way is that on GitHub pages, I can only serve static files, and can't demo the projects I've worked on.</p>
+
+<p>Finally, I bought the Somalian domain name "irruncibly.so". I linked it to my GitHub pages following <a href="http://127.0.0.1:2368/how-to-make-a-blog-for-free/%5B(http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html)">these clear instructions</a>, so that now <a href="http://sdwebster.github.io">http://sdwebster.github.io</a> redirects to <a href="http://sdwebster.github.io">irruncibly.so</a>. I was confused at first when the instructions referred to "192.30.252.153", then I realized that it's simply an IP address for GitHub.</p>
+
+<p>Happy blogging!</p>
+
+<p><em>Read more about my blog's name in my post <a href="../what-does-irruncibly-mean/">What does "irruncibly" mean?</a></em></p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/steve/" style="background-image: url(../content/images/2015/04/last_autumn_hike.jpeg)"><span class="hidden">Steve Webster's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/steve/">Steve Webster</a></h4>
+
+                    <p>Read <a href="../author/steve/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=How%20to%20make%20a%20blog%20for%20free&amp;url=http://localhost:2368/how-to-make-a-blog-for-free/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/how-to-make-a-blog-for-free/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/how-to-make-a-blog-for-free/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'irruncibly'; // required: replace example with your forum shortname
+        var disqus_identifier = '';
+     
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            // indentifier for extra reliability
+            var disqus_identifier = 'ghost-10';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://localhost:2368">irruncibly</a> © 2015</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="../public/jquery.js?v=752b2c7e78"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=752b2c7e78"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=752b2c7e78"></script>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'irruncibly';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>

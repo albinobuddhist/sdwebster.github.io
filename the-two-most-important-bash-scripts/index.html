@@ -1,0 +1,226 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>The two most important bash scripts</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=752b2c7e78">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://localhost:2368/the-two-most-important-bash-scripts/">
+    
+    <meta property="og:site_name" content="irruncibly">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The two most important bash scripts">
+    <meta property="og:description" content="If you want to save yourself time in the Mac OS Terminal, you will need to fill your bash profile with useful shortcuts. You get to choose how deep you will get into this game, which is to say, how...">
+    <meta property="og:url" content="http://localhost:2368/the-two-most-important-bash-scripts/">
+    <meta property="article:published_time" content="2015-04-05T21:54:02.263Z">
+    <meta property="article:modified_time" content="2015-04-07T23:57:09.850Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The two most important bash scripts">
+    <meta name="twitter:description" content="If you want to save yourself time in the Mac OS Terminal, you will need to fill your bash profile with useful shortcuts. You get to choose how deep you will get into this game, which is to say, how...">
+    <meta name="twitter:url" content="http://localhost:2368/the-two-most-important-bash-scripts/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "irruncibly",
+    "author": {
+        "@type": "Person",
+        "name": "Steve Webster",
+        "image": "http://localhost:2368/content/images/2015/04/last_autumn_hike.jpeg",
+        "url": "http://localhost:2368/author/steve",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "The two most important bash scripts",
+    "url": "http://localhost:2368/the-two-most-important-bash-scripts/",
+    "datePublished": "2015-04-05T21:54:02.263Z",
+    "dateModified": "2015-04-07T23:57:09.850Z",
+    "description": "If you want to save yourself time in the Mac OS Terminal, you will need to fill your bash profile with useful shortcuts. You get to choose how deep you will get into this game, which is to say, how..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="irruncibly" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://localhost:2368">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="http://localhost:2368/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">The two most important bash scripts</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-04-05">05 April 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>If you want to save yourself time in the Mac OS Terminal, you will need to fill your bash profile with useful shortcuts. You get to choose how deep you will get into this game, which is to say, how easy your life in the Terminal will become. You'll probably start by copy-pasting useful shortcuts into your bash profile from source such as <a href="https://github.com/joshWyatt/keyboardShortcuts">Josh Wyatt's list of keyboard shortcuts</a>, then move onto creating your own aliases. Maybe you'll eventually start writing bash functions, too. </p>
+
+<p>However, populating your bash profile is a tedious process of its own. Your bash profile is a dotfile, invisible to you as you browse the Finder window or type an ordinary "ls" in your terminal. After finding the bash profile and adding or modifying one of your aliases, you need to save the bash profile and restart the Terminal window. The repetitiveness of this process prevents many people from building up a fast Terminal workflow. In this post, I will tell you how to streamline that effort, making the process much easier for you.</p>
+
+<p>Your bash profile resides at "/Users/steve/.bash_profile", and you can see it by navigating to your home folder (don't type the dollar sign; that's just there to  indicate you're typing in the Terminal window)...</p>
+
+<pre><code>$ cd
+</code></pre>
+
+<p>...and then listing the files at this location.</p>
+
+<pre><code>$ ls
+</code></pre>
+
+<p>Wait, the bash profile's not there! Where is it? Try again, this time listing <em>all</em> the files:</p>
+
+<pre><code>$ ls -a
+</code></pre>
+
+<p>Those files whose names begin with a period? Those are dotfiles. Open up the bash profile with this command:</p>
+
+<pre><code>$ open .bash_profile
+</code></pre>
+
+<p>(Feel free to substitute a different text editor for 'open'). Now you will see a TextEdit window with your bash profile. Paste in these three commands:</p>
+
+<pre><code>alias subl="open -a Sublime\ Text\ 2"
+alias prof="subl ~/.bash_profile"
+alias reprof=". ~/.bash_profile"
+</code></pre>
+
+<p>Ok, so I lied about the "two" part. The two critical aliases are "prof" and "reprof", but as I have it here, "prof" relies on "subl". My "subl" command will work for users of the Sublime 2 text editor. If you use Sublime 3, substitute "3" for "2". If you don't use Sublime at all, you can adapt to the text editor of your choice, or just opt for this:</p>
+
+<pre><code>alias prof="open ~/.bash_profile"
+alias reprof=". ~/.bash_profile"
+</code></pre>
+
+<p>See? There are only two.</p>
+
+<p>Why are "prof" and "reprof" so useful? Just watch. Save and close your profile. Now, <em>for the last time ever</em>, restart your Terminal to put the new bash aliases into effect.</p>
+
+<p>Now, think of some bash command you always type. If you use git, maybe you are always typing "git push origin master", and you wish you could just type "gpom". Well, first make sure "gpom" is not already taken:</p>
+
+<pre><code> $ gpom
+ &gt;&gt;&gt; -bash: gpom: command not found
+</code></pre>
+
+<p>Looks like you're good to go, you don't need to worry about overwriting something important. Type 'prof', and you will see your bash profile open up. Add a new line to create your desired alias:</p>
+
+<pre><code> alias gpom="git push origin master"
+</code></pre>
+
+<p>Sove the bash profile, return to the Terminal window, and type "reprof". Now your Terminal knows about "gpom" and you can use it right away. No need to restart.</p>
+
+<p>This simple pair of commands can turn you into a true Terminal wizard. Whenever you're about to type a command that you've typed several times before, you can add a new alias or function without interrupting your workflow at all. Simply use "prof" and "reprof".</p>
+
+<p><em>This blogpost was inspired by a talk given by Josh Wyatt, whose <a href="https://github.com/joshWyatt/keyboardShortcuts">list of keyboard shortcuts</a> is well worth reading. It has some nice starter aliases that you can copy into your bash profile, and also lists plenty of MacOS commands that helped ease my transition from Windows.</em></p>
+
+<p><em>Aliases are fine, but bash functions are even more powerful. To see an example of a useful bash function, you can check out Chris Rinaldi's post about <a href="http://cgrinaldi.github.io/2015/02/24/automating-git-pull/">how to pull down a "solution" branch for several repos at a time</a>.</em></p>
+
+<p><em>For another productivity tip involving Sublime, checkout <a href="http://irruncibly.so/run-js-code-in-sublime/">my post about how to run JavaScript code in Sublime</a>.</em> </p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/steve/" style="background-image: url(../content/images/2015/04/last_autumn_hike.jpeg)"><span class="hidden">Steve Webster's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/steve/">Steve Webster</a></h4>
+
+                    <p>Read <a href="../author/steve/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=The%20two%20most%20important%20bash%20scripts&amp;url=http://localhost:2368/the-two-most-important-bash-scripts/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/the-two-most-important-bash-scripts/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/the-two-most-important-bash-scripts/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'irruncibly'; // required: replace example with your forum shortname
+        var disqus_identifier = '';
+     
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            // indentifier for extra reliability
+            var disqus_identifier = 'ghost-11';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://localhost:2368">irruncibly</a> © 2015</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="../public/jquery.js?v=752b2c7e78"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=752b2c7e78"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=752b2c7e78"></script>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'irruncibly';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>

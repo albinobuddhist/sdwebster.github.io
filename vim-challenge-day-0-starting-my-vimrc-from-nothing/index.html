@@ -1,0 +1,230 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Vim Challenge Day 0: Starting my .vimrc from nothing</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=752b2c7e78">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/">
+    
+    <meta property="og:site_name" content="irruncibly">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vim Challenge Day 0: Starting my .vimrc from nothing">
+    <meta property="og:description" content="Today begins my deep dive into vim. My friends have told me that vim or emacs is absolutely worth the initial learning curve, and this kind of productivity investment is the kind of thing a Dvorak-er like me loves. Let...">
+    <meta property="og:url" content="http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/">
+    <meta property="article:published_time" content="2015-06-26T06:39:01.135Z">
+    <meta property="article:modified_time" content="2015-06-26T23:50:57.744Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vim Challenge Day 0: Starting my .vimrc from nothing">
+    <meta name="twitter:description" content="Today begins my deep dive into vim. My friends have told me that vim or emacs is absolutely worth the initial learning curve, and this kind of productivity investment is the kind of thing a Dvorak-er like me loves. Let...">
+    <meta name="twitter:url" content="http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "irruncibly",
+    "author": {
+        "@type": "Person",
+        "name": "Steve Webster",
+        "image": "http://localhost:2368/content/images/2015/04/last_autumn_hike.jpeg",
+        "url": "http://localhost:2368/author/steve",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Vim Challenge Day 0: Starting my .vimrc from nothing",
+    "url": "http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/",
+    "datePublished": "2015-06-26T06:39:01.135Z",
+    "dateModified": "2015-06-26T23:50:57.744Z",
+    "description": "Today begins my deep dive into vim. My friends have told me that vim or emacs is absolutely worth the initial learning curve, and this kind of productivity investment is the kind of thing a Dvorak-er like me loves. Let..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="irruncibly" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://localhost:2368">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="http://localhost:2368/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Vim Challenge Day 0: Starting my .vimrc from nothing</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-06-25">25 June 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Today begins my deep dive into vim. My friends have told me that vim or emacs is absolutely worth the initial learning curve, and this kind of productivity investment is the kind of thing a Dvorak-er like me loves. Let me tell you all about the Vim Challenge I've set for myself. Then, I will show you how I am easing myself into the rabbit hole of <code>.vimrc</code> customization.</p>
+
+<h3 id="adeepdiveintovim">A deep dive into vim</h3>
+
+<p>This Vim Challenge is inspired by my time in immersive-style language training programs. In this, I owe a lot to Khatsumoto of the "All Japanese All The Time" blog.</p>
+
+<p><strong><em>The goal</em></strong>: <em>in one month, my speed with vim and tmux will outpace my skills with Sublime.</em> </p>
+
+<p><strong><em>The rules</em></strong>: <em>every day for the next week (and perhaps beyond), I will use vim for at least 50% of my typing and programming.</em> Where did I get that 50% from? Well, I don't want to compromise certain life-sustaining tasks, and some (such as gmail) may never be vim-able, but my other projects as a Hacker-in-Residence at <a href="http://www.hackreactor.com">Hack Reactor</a> can afford to take a temporary hit in productivity. </p>
+
+<p><strong><em>The caveats</em></strong>: <em>starting out, certain activities count toward my "vim time"</em>  because they fit within the spirit of the challenge, even though they are not in a vim window:</p>
+
+<ul>
+<li><p>I've set my Sublime to Vintage mode, a setting that lets you harness your vim tricks while staying in the cozy Sublime interface (see this great video about <a href="index.html">getting Vintage mode up and running</a>). This temporary compromise will allow me to transition smoother. It will also keep collaborators on my various projects from getting annoyed with my slow novice vim.</p></li>
+<li><p>I've installed <a href="index.html">Vimium</a>, a Google Chrome plugin that introduces vim-like shortcuts into your browsing experience. I highly recommend this tool, although you'll may have to resolve some conflicts when you open up a web app like gmail where you have enabled the shortcut (do it if you haven't yet!).</p></li>
+</ul>
+
+<p><strong><em>The resources</em></strong>: <em>a friend has recommended Drew Neil's</em> Practical Vim <em>as a starting place</em>, so I have bought a copy to peruse. However, I will not get stuck in, because that's not how you learn. Instead, you follow...</p>
+
+<p><strong><em>The method</em></strong>: so long as the vim window is open, there are no rules or expectations. If I have time, I can use all the tricks I know, go google some more as needed, and read straight out of the textbook. On the other hand, if I am working on a task that requires me to focus on something other than my text editor, I can also revert to trusty habits. I can navigate just with repeated 'h', 'j', 'k', and 'l'. I can stay in <code>INSERT</code> mode and just do everything with with my arrow keys and backspace. As a mac user, I can throw in the occasional command (⌘) key shortcut. I can even (the horror!) cut and paste with my <em>mouse</em> to start out. The key that I am not afraid to be wrong, and not afraid to be clumsy. </p>
+
+<p>It doesn't matter whether I am "vimming" perfectly. What matters is that I am "vimming" at all. I read something once that if those buff people in the freeweights corner of the gym make you feel bad about yourself, just remember that you're lapping all the people who didn't show up to the gym today while they sit at home on the couch.</p>
+
+<p>This is where that language-immersion mindset kicks in. You need engage with the tool all day long. You need to understand the frustration of <em>not</em> knowing how to yank a line and paste it somewhere else, in order to want to <em>learn</em> and <em>retain</em> that information. Vim is a language, with a vocabulary, a grammar, and (I'm told) all kinds of poetry if you get deep enough into it. When that shortcut finally comes to you, it feels like your first day riding a bike without training wheels - exhilarating, and you'll never forget how.</p>
+
+<h3 id="areyoureadyforthevimchallenge">Are you ready for the Vim Challenge?</h3>
+
+<p>Ask yourself these questions:</p>
+
+<ul>
+<li><p>Do you want to be a super programmer? (disclaimer: I don't know yet whether vim makes you a super programmer, but people say it does).</p></li>
+<li><p>Have you installed vim?</p></li>
+<li><p>Have you gotten your feet wet? If not, you can:</p>
+
+<ul><li>Do the vimtutor</li>
+<li>Do it again the next week</li>
+<li>Use vim-esque tools like Vimium and Sublime Vintage mode</li>
+<li>Do some repetitive or mindless tasks in vim. For me, I wanted to know a little Python syntax, so I went through Zed Shaw's <em><a href="index.html">Learn Python the Hard Way</a></em> using vim (for Zed Shaw, the "hard way" means "type this code line by line, exactly as I've written it, with no copyj/paste, and see what it does --- which turns out to actually be pretty effective, especially for my vim purposes).</li></ul></li>
+<li><p>What proportion of your typing tasks could you do in vim? For me, the target is 50%. How much can you afford?</p></li>
+<li><p>More importantly, how much patience can you spare?</p></li>
+</ul>
+
+<h3 id="whattodoaboutthatvimrcfile">What to do about that <code>.vimrc</code> file?</h3>
+
+<p>If you want to dive into vim with out too much productivity loss, there is a way you can make your life a lot easier: fill up your <code>.vimrc</code> file, which contains all your customizations. You can ask all your vim-using friends about their <code>.vimrc</code>, look at what other people have posted online, and paste it all right into your <code>.vimrc</code>. Honestly, this will make your programming experience feel a lot like Sublime or any other out-of-the-box text-editor. The problem is, you won't know what's in your package. You won't be learning "real" vim.</p>
+
+<p>This sounds like purism of the worst sort. But I've decided to assemble my own <code>.vimrc</code> over a more gradual time.</p>
+
+<p>Let's back up and ask, why do you want to learn "real" vim? Well, one of vim's major selling points is portability - you can set it up quickly on any computer, anywhere, and it is baked into plug-ins such as. Also, if you want to really <em>own</em> your <code>.vimrc</code> file, and make it yours (the point here is customization, right?), then you want to know what everything is.</p>
+
+<p>My solution is, bake my friends' cool hacks into my code <em>graduallly</em>. My friends here at Hack Reactor all write a lot of JavaScript code, just like me, so their suggestions. Nevertheless, I am following these deliberate steps, and you can, too:</p>
+
+<ul>
+<li><p>Locate (or make) a <code>.vimrc file</code>. On my mac, it is in my home directory, which I can reach in the command line by typing <code>cd ~</code> or just <code>cd</code>. Then, I look at the files (<code>ls -a') and find the one called</code>.vimrc<code>. If it's not there, you can create it (</code>touch .vimrc<code>), and then I open it up (</code>vim .vimrc`. Whoa...meta!).</p></li>
+<li><p>Make a comment at the top saying "Sarah's .vimrc", "George's vim suggestions", etc.</p></li>
+<li><p>Copy in your friend's stuff, or stuff you found on a website (again, don't feel bad about using a mouse to cut and paste sometimes at the beginning!), and comment it out with a quote mark <code>"</code> (ok, for the block commenting, you can read up on this Stack Overflow thread how to use vim's <code>BLOCK VISUAL</code> mode).</p></li>
+<li><p>Go to the top of the <code>.vimrc</code> (<code>gg</code>) and make a global mark (using <code>m V</code>) that</p></li>
+<li><p>Line by line, as you have the time, you figure out what each thing does, uncomment it, try it out, and see whether you like it. </p></li>
+</ul>
+
+<p>Here is what my <code>.vimrc</code> looks like to start out:</p>
+
+<p>Start your <code>.vimrc</code> from nothing aligns well with our whole immersive approach: you don't try to learn all the tricks at once. You always have one or two that you are trying to learn, and as you are programming you listen for the voice that says "ooooh, there is (or should be) a command for that!" If you've got the time, pull up your Alfred (definitely <a href="http://www.alfredapp.com/">get Alfred</a> if you have a Mac, he will speed up your googling and your spotlighting), and figure out how to do it better!</p>
+
+<p><em>This post was composed entirely in vim, with some final formatting done in the ghostblog interface.</em></p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/steve/" style="background-image: url(../content/images/2015/04/last_autumn_hike.jpeg)"><span class="hidden">Steve Webster's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/steve/">Steve Webster</a></h4>
+
+                    <p>Read <a href="../author/steve/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Vim%20Challenge%20Day%200%3A%20Starting%20my%20.vimrc%20from%20nothing&amp;url=http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'irruncibly'; // required: replace example with your forum shortname
+        var disqus_identifier = '';
+     
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            // indentifier for extra reliability
+            var disqus_identifier = 'ghost-14';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://localhost:2368">irruncibly</a> © 2015</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="../public/jquery.js?v=752b2c7e78"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=752b2c7e78"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=752b2c7e78"></script>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'irruncibly';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>

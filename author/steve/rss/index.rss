@@ -1,0 +1,411 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Steve Webster - irruncibly</title><description>A place to share what I learn about JavaScript and the libraries that are driving its renaissance.</description><link>http://localhost:2368/</link><generator>Ghost 0.6</generator><lastBuildDate>Sat, 27 Jun 2015 00:31:37 GMT</lastBuildDate><atom:link href="http://localhost:2368/author/steve/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Vim Challenge Day 0: Starting my .vimrc from nothing</title><description>&lt;p&gt;Today begins my deep dive into vim. My friends have told me that vim or emacs is absolutely worth the initial learning curve, and this kind of productivity investment is the kind of thing a Dvorak-er like me loves. Let me tell you all about the Vim Challenge I've set&lt;/p&gt;</description><link>http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/</link><guid isPermaLink="false">dba1bf6e-b0ce-490b-bd21-1acbdd80272e</guid><dc:creator>Steve Webster</dc:creator><pubDate>Fri, 26 Jun 2015 06:39:01 GMT</pubDate><content:encoded>&lt;p&gt;Today begins my deep dive into vim. My friends have told me that vim or emacs is absolutely worth the initial learning curve, and this kind of productivity investment is the kind of thing a Dvorak-er like me loves. Let me tell you all about the Vim Challenge I've set for myself. Then, I will show you how I am easing myself into the rabbit hole of &lt;code&gt;.vimrc&lt;/code&gt; customization.&lt;/p&gt;
+
+&lt;h3 id="adeepdiveintovim"&gt;A deep dive into vim&lt;/h3&gt;
+
+&lt;p&gt;This Vim Challenge is inspired by my time in immersive-style language training programs. In this, I owe a lot to Khatsumoto of the "All Japanese All The Time" blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The goal&lt;/em&gt;&lt;/strong&gt;: &lt;em&gt;in one month, my speed with vim and tmux will outpace my skills with Sublime.&lt;/em&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The rules&lt;/em&gt;&lt;/strong&gt;: &lt;em&gt;every day for the next week (and perhaps beyond), I will use vim for at least 50% of my typing and programming.&lt;/em&gt; Where did I get that 50% from? Well, I don't want to compromise certain life-sustaining tasks, and some (such as gmail) may never be vim-able, but my other projects as a Hacker-in-Residence at &lt;a href="http://www.hackreactor.com"&gt;Hack Reactor&lt;/a&gt; can afford to take a temporary hit in productivity. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The caveats&lt;/em&gt;&lt;/strong&gt;: &lt;em&gt;starting out, certain activities count toward my "vim time"&lt;/em&gt;  because they fit within the spirit of the challenge, even though they are not in a vim window:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I've set my Sublime to Vintage mode, a setting that lets you harness your vim tricks while staying in the cozy Sublime interface (see this great video about &lt;a href="http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/"&gt;getting Vintage mode up and running&lt;/a&gt;). This temporary compromise will allow me to transition smoother. It will also keep collaborators on my various projects from getting annoyed with my slow novice vim.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I've installed &lt;a href="http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/"&gt;Vimium&lt;/a&gt;, a Google Chrome plugin that introduces vim-like shortcuts into your browsing experience. I highly recommend this tool, although you'll may have to resolve some conflicts when you open up a web app like gmail where you have enabled the shortcut (do it if you haven't yet!).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The resources&lt;/em&gt;&lt;/strong&gt;: &lt;em&gt;a friend has recommended Drew Neil's&lt;/em&gt; Practical Vim &lt;em&gt;as a starting place&lt;/em&gt;, so I have bought a copy to peruse. However, I will not get stuck in, because that's not how you learn. Instead, you follow...&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The method&lt;/em&gt;&lt;/strong&gt;: so long as the vim window is open, there are no rules or expectations. If I have time, I can use all the tricks I know, go google some more as needed, and read straight out of the textbook. On the other hand, if I am working on a task that requires me to focus on something other than my text editor, I can also revert to trusty habits. I can navigate just with repeated 'h', 'j', 'k', and 'l'. I can stay in &lt;code&gt;INSERT&lt;/code&gt; mode and just do everything with with my arrow keys and backspace. As a mac user, I can throw in the occasional command (⌘) key shortcut. I can even (the horror!) cut and paste with my &lt;em&gt;mouse&lt;/em&gt; to start out. The key that I am not afraid to be wrong, and not afraid to be clumsy. &lt;/p&gt;
+
+&lt;p&gt;It doesn't matter whether I am "vimming" perfectly. What matters is that I am "vimming" at all. I read something once that if those buff people in the freeweights corner of the gym make you feel bad about yourself, just remember that you're lapping all the people who didn't show up to the gym today while they sit at home on the couch.&lt;/p&gt;
+
+&lt;p&gt;This is where that language-immersion mindset kicks in. You need engage with the tool all day long. You need to understand the frustration of &lt;em&gt;not&lt;/em&gt; knowing how to yank a line and paste it somewhere else, in order to want to &lt;em&gt;learn&lt;/em&gt; and &lt;em&gt;retain&lt;/em&gt; that information. Vim is a language, with a vocabulary, a grammar, and (I'm told) all kinds of poetry if you get deep enough into it. When that shortcut finally comes to you, it feels like your first day riding a bike without training wheels - exhilarating, and you'll never forget how.&lt;/p&gt;
+
+&lt;h3 id="areyoureadyforthevimchallenge"&gt;Are you ready for the Vim Challenge?&lt;/h3&gt;
+
+&lt;p&gt;Ask yourself these questions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Do you want to be a super programmer? (disclaimer: I don't know yet whether vim makes you a super programmer, but people say it does).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Have you installed vim?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Have you gotten your feet wet? If not, you can:&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;Do the vimtutor&lt;/li&gt;
+&lt;li&gt;Do it again the next week&lt;/li&gt;
+&lt;li&gt;Use vim-esque tools like Vimium and Sublime Vintage mode&lt;/li&gt;
+&lt;li&gt;Do some repetitive or mindless tasks in vim. For me, I wanted to know a little Python syntax, so I went through Zed Shaw's &lt;em&gt;&lt;a href="http://localhost:2368/vim-challenge-day-0-starting-my-vimrc-from-nothing/"&gt;Learn Python the Hard Way&lt;/a&gt;&lt;/em&gt; using vim (for Zed Shaw, the "hard way" means "type this code line by line, exactly as I've written it, with no copyj/paste, and see what it does --- which turns out to actually be pretty effective, especially for my vim purposes).&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What proportion of your typing tasks could you do in vim? For me, the target is 50%. How much can you afford?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;More importantly, how much patience can you spare?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="whattodoaboutthatvimrcfile"&gt;What to do about that &lt;code&gt;.vimrc&lt;/code&gt; file?&lt;/h3&gt;
+
+&lt;p&gt;If you want to dive into vim with out too much productivity loss, there is a way you can make your life a lot easier: fill up your &lt;code&gt;.vimrc&lt;/code&gt; file, which contains all your customizations. You can ask all your vim-using friends about their &lt;code&gt;.vimrc&lt;/code&gt;, look at what other people have posted online, and paste it all right into your &lt;code&gt;.vimrc&lt;/code&gt;. Honestly, this will make your programming experience feel a lot like Sublime or any other out-of-the-box text-editor. The problem is, you won't know what's in your package. You won't be learning "real" vim.&lt;/p&gt;
+
+&lt;p&gt;This sounds like purism of the worst sort. But I've decided to assemble my own &lt;code&gt;.vimrc&lt;/code&gt; over a more gradual time.&lt;/p&gt;
+
+&lt;p&gt;Let's back up and ask, why do you want to learn "real" vim? Well, one of vim's major selling points is portability - you can set it up quickly on any computer, anywhere, and it is baked into plug-ins such as. Also, if you want to really &lt;em&gt;own&lt;/em&gt; your &lt;code&gt;.vimrc&lt;/code&gt; file, and make it yours (the point here is customization, right?), then you want to know what everything is.&lt;/p&gt;
+
+&lt;p&gt;My solution is, bake my friends' cool hacks into my code &lt;em&gt;graduallly&lt;/em&gt;. My friends here at Hack Reactor all write a lot of JavaScript code, just like me, so their suggestions. Nevertheless, I am following these deliberate steps, and you can, too:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Locate (or make) a &lt;code&gt;.vimrc file&lt;/code&gt;. On my mac, it is in my home directory, which I can reach in the command line by typing &lt;code&gt;cd ~&lt;/code&gt; or just &lt;code&gt;cd&lt;/code&gt;. Then, I look at the files (&lt;code&gt;ls -a') and find the one called&lt;/code&gt;.vimrc&lt;code&gt;. If it's not there, you can create it (&lt;/code&gt;touch .vimrc&lt;code&gt;), and then I open it up (&lt;/code&gt;vim .vimrc`. Whoa...meta!).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make a comment at the top saying "Sarah's .vimrc", "George's vim suggestions", etc.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Copy in your friend's stuff, or stuff you found on a website (again, don't feel bad about using a mouse to cut and paste sometimes at the beginning!), and comment it out with a quote mark &lt;code&gt;"&lt;/code&gt; (ok, for the block commenting, you can read up on this Stack Overflow thread how to use vim's &lt;code&gt;BLOCK VISUAL&lt;/code&gt; mode).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Go to the top of the &lt;code&gt;.vimrc&lt;/code&gt; (&lt;code&gt;gg&lt;/code&gt;) and make a global mark (using &lt;code&gt;m V&lt;/code&gt;) that&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Line by line, as you have the time, you figure out what each thing does, uncomment it, try it out, and see whether you like it. &lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is what my &lt;code&gt;.vimrc&lt;/code&gt; looks like to start out:&lt;/p&gt;
+
+&lt;p&gt;Start your &lt;code&gt;.vimrc&lt;/code&gt; from nothing aligns well with our whole immersive approach: you don't try to learn all the tricks at once. You always have one or two that you are trying to learn, and as you are programming you listen for the voice that says "ooooh, there is (or should be) a command for that!" If you've got the time, pull up your Alfred (definitely &lt;a href="http://www.alfredapp.com/"&gt;get Alfred&lt;/a&gt; if you have a Mac, he will speed up your googling and your spotlighting), and figure out how to do it better!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This post was composed entirely in vim, with some final formatting done in the ghostblog interface.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title>The two most important bash scripts</title><description>&lt;p&gt;If you want to save yourself time in the Mac OS Terminal, you will need to fill your bash profile with useful shortcuts. You get to choose how deep you will get into this game, which is to say, how easy your life in the Terminal will become. You'll probably&lt;/p&gt;</description><link>http://localhost:2368/the-two-most-important-bash-scripts/</link><guid isPermaLink="false">010d9b13-9067-4074-9a09-147dca5240ad</guid><dc:creator>Steve Webster</dc:creator><pubDate>Sun, 05 Apr 2015 21:54:02 GMT</pubDate><content:encoded>&lt;p&gt;If you want to save yourself time in the Mac OS Terminal, you will need to fill your bash profile with useful shortcuts. You get to choose how deep you will get into this game, which is to say, how easy your life in the Terminal will become. You'll probably start by copy-pasting useful shortcuts into your bash profile from source such as &lt;a href="https://github.com/joshWyatt/keyboardShortcuts"&gt;Josh Wyatt's list of keyboard shortcuts&lt;/a&gt;, then move onto creating your own aliases. Maybe you'll eventually start writing bash functions, too. &lt;/p&gt;
+
+&lt;p&gt;However, populating your bash profile is a tedious process of its own. Your bash profile is a dotfile, invisible to you as you browse the Finder window or type an ordinary "ls" in your terminal. After finding the bash profile and adding or modifying one of your aliases, you need to save the bash profile and restart the Terminal window. The repetitiveness of this process prevents many people from building up a fast Terminal workflow. In this post, I will tell you how to streamline that effort, making the process much easier for you.&lt;/p&gt;
+
+&lt;p&gt;Your bash profile resides at "/Users/steve/.bash_profile", and you can see it by navigating to your home folder (don't type the dollar sign; that's just there to  indicate you're typing in the Terminal window)...&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;...and then listing the files at this location.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wait, the bash profile's not there! Where is it? Try again, this time listing &lt;em&gt;all&lt;/em&gt; the files:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Those files whose names begin with a period? Those are dotfiles. Open up the bash profile with this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ open .bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(Feel free to substitute a different text editor for 'open'). Now you will see a TextEdit window with your bash profile. Paste in these three commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;alias subl="open -a Sublime\ Text\ 2"
+alias prof="subl ~/.bash_profile"
+alias reprof=". ~/.bash_profile"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok, so I lied about the "two" part. The two critical aliases are "prof" and "reprof", but as I have it here, "prof" relies on "subl". My "subl" command will work for users of the Sublime 2 text editor. If you use Sublime 3, substitute "3" for "2". If you don't use Sublime at all, you can adapt to the text editor of your choice, or just opt for this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;alias prof="open ~/.bash_profile"
+alias reprof=". ~/.bash_profile"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See? There are only two.&lt;/p&gt;
+
+&lt;p&gt;Why are "prof" and "reprof" so useful? Just watch. Save and close your profile. Now, &lt;em&gt;for the last time ever&lt;/em&gt;, restart your Terminal to put the new bash aliases into effect.&lt;/p&gt;
+
+&lt;p&gt;Now, think of some bash command you always type. If you use git, maybe you are always typing "git push origin master", and you wish you could just type "gpom". Well, first make sure "gpom" is not already taken:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ gpom
+ &amp;gt;&amp;gt;&amp;gt; -bash: gpom: command not found
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Looks like you're good to go, you don't need to worry about overwriting something important. Type 'prof', and you will see your bash profile open up. Add a new line to create your desired alias:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; alias gpom="git push origin master"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sove the bash profile, return to the Terminal window, and type "reprof". Now your Terminal knows about "gpom" and you can use it right away. No need to restart.&lt;/p&gt;
+
+&lt;p&gt;This simple pair of commands can turn you into a true Terminal wizard. Whenever you're about to type a command that you've typed several times before, you can add a new alias or function without interrupting your workflow at all. Simply use "prof" and "reprof".&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This blogpost was inspired by a talk given by Josh Wyatt, whose &lt;a href="https://github.com/joshWyatt/keyboardShortcuts"&gt;list of keyboard shortcuts&lt;/a&gt; is well worth reading. It has some nice starter aliases that you can copy into your bash profile, and also lists plenty of MacOS commands that helped ease my transition from Windows.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Aliases are fine, but bash functions are even more powerful. To see an example of a useful bash function, you can check out Chris Rinaldi's post about &lt;a href="http://cgrinaldi.github.io/2015/02/24/automating-git-pull/"&gt;how to pull down a "solution" branch for several repos at a time&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For another productivity tip involving Sublime, checkout &lt;a href="http://irruncibly.so/run-js-code-in-sublime/"&gt;my post about how to run JavaScript code in Sublime&lt;/a&gt;.&lt;/em&gt; &lt;/p&gt;</content:encoded></item><item><title>How to make a blog for free</title><description>&lt;p&gt;I made this blog for free, and so can you. I created it using the Ghost framework and hosted it through my GitHub pages, then added free Disqus comments. Here are the steps I took and some links to the various instructions I read.&lt;/p&gt;
+
+&lt;p&gt;My main source of  helpful instructions&lt;/p&gt;</description><link>http://localhost:2368/how-to-make-a-blog-for-free/</link><guid isPermaLink="false">f0fc1deb-bed1-4df1-8211-a34fa3046bd6</guid><dc:creator>Steve Webster</dc:creator><pubDate>Thu, 02 Apr 2015 18:14:59 GMT</pubDate><content:encoded>&lt;p&gt;I made this blog for free, and so can you. I created it using the Ghost framework and hosted it through my GitHub pages, then added free Disqus comments. Here are the steps I took and some links to the various instructions I read.&lt;/p&gt;
+
+&lt;p&gt;My main source of  helpful instructions from LED Technica. Before I direct you there, make sure that you have installed the following:&lt;/p&gt;
+
+&lt;ol&gt;  
+  &lt;li&gt;Python (from &lt;a href="https://pip.pypa.io/en/latest/installing.html"&gt;this    site&lt;/a&gt;)
+  &lt;/li&gt;
+  &lt;li&gt;Node.js (available &lt;a href="https://nodejs.org"&gt;here&lt;/a&gt;)     &lt;/li&gt;
+&lt;/ol&gt;  
+
+&lt;p&gt;If you don't remember whether you have installed them, type into your terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which python
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This returns "/usr/bin/python", or some similar file path. Same for Node.js:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which node
+&amp;gt;&amp;gt;/usr/local/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also make sure that your Python includes pip, a Python package manager:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which pip
+&amp;gt;&amp;gt;/usr/local/bin/pip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install pip if you do not have it (&lt;a href="https://pip.pypa.io/en/latest/installing.html"&gt;here's how&lt;/a&gt;).  &lt;/p&gt;
+
+&lt;p&gt;Once you have installed each of the above, you are ready to walk through &lt;a href="http://ledtechnica.com/free-ghost-hosting-on-github-pages/"&gt;LED Technica's instructions&lt;/a&gt;. The basic process is:  &lt;/p&gt;
+
+&lt;ol&gt;  
+  &lt;li&gt;Run a Ghost blog with node.js locally (i.e., using my computer as a server so only I can see it).&lt;/li&gt;
+  &lt;li&gt;Use a Python package called Buster (as in &lt;a href="http://www.imdb.com/title/tt0087332"&gt;&lt;i&gt;GhostBusters&lt;/i&gt;&lt;/a&gt;) which will read the static files off my local server, and tidy them up for a push to GitHub. This step will require you to install Python and Pip .&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;After finishing LED Technica's instructions, you still need to go to your 'ghost-0.5.8' (or 'ghost-#.#.#') folder and edit the 'config.js'. Find the 'config.production.url' &lt;em&gt;and&lt;/em&gt; 'config.development.url' and replace them with your blog's url (such as '&lt;a href="http://sdwebster.github.io/"&gt;http://sdwebster.github.io/&lt;/a&gt;' or &lt;a href="http://irruncibly.so"&gt;'&lt;a href="http://irruncibly.so"&gt;http://irruncibly.so&lt;/a&gt;'&lt;/a&gt;, then restart your local server before calling Buster again. If you don't do this, your "Home" button will redirect to localhost:2368, and your blog will break.&lt;/p&gt;
+
+&lt;p&gt;Later on, I added Disqus comments (also free of charge) by following &lt;a href="http://support.ghost.org/add-disqus-to-my-ghost-blog/"&gt;these other instructions&lt;/a&gt;. I had to dig around a bit when they started talking about my “post.hbs” file - it turned out to be at ".../ghost-0.5.8/content/themes/casper/post.hbs".&lt;/p&gt;
+
+&lt;p&gt;At this point, my new blog was online at &lt;a href="http://sdwebster.github.io"&gt;http://sdwebster.github.io&lt;/a&gt;, entirely for free. The only drawback to doing it this way is that on GitHub pages, I can only serve static files, and can't demo the projects I've worked on.&lt;/p&gt;
+
+&lt;p&gt;Finally, I bought the Somalian domain name "irruncibly.so". I linked it to my GitHub pages following &lt;a href="http://localhost:2368/how-to-make-a-blog-for-free/[(http://andrewsturges.com/blog/jekyll/tutorial/2014/11/06/github-and-godaddy.html)"&gt;these clear instructions&lt;/a&gt;, so that now &lt;a href="http://sdwebster.github.io"&gt;http://sdwebster.github.io&lt;/a&gt; redirects to &lt;a href="http://sdwebster.github.io"&gt;irruncibly.so&lt;/a&gt;. I was confused at first when the instructions referred to "192.30.252.153", then I realized that it's simply an IP address for GitHub.&lt;/p&gt;
+
+&lt;p&gt;Happy blogging!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Read more about my blog's name in my post &lt;a href="http://localhost:2368/what-does-irruncibly-mean/"&gt;What does "irruncibly" mean?&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title>Pair Programming, Chopin, and Zombies</title><description>&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/03/frederic-chopin-zombie.png" alt="Chopin Zombie"&gt;&lt;/p&gt;
+
+&lt;div style="text-align: center; font-size: 80%; margin-bottom:30px"&gt;  
+Frédéric Chopin&lt;br&gt;  
+Composer, pianist&lt;br&gt;  
+b. 1810 - d. &lt;del&gt;1849&lt;/del&gt;aaaaaaggghhh!!!  
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Pair programming is the primary learning model for the content-rich junior half of the Hack Reactor immersion program (learn more about the curriculum in my post about What We Learn at Hack Reactor). I remember that on my second day&lt;/em&gt;&lt;/p&gt;</description><link>http://localhost:2368/pair-programming-chopin-and-zombies/</link><guid isPermaLink="false">b04f15e3-847f-4a28-97ba-273a77af43d3</guid><dc:creator>Steve Webster</dc:creator><pubDate>Mon, 30 Mar 2015 08:19:18 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/03/frederic-chopin-zombie.png" alt="Chopin Zombie"&gt;&lt;/p&gt;
+
+&lt;div style="text-align: center; font-size: 80%; margin-bottom:30px"&gt;  
+Frédéric Chopin&lt;br&gt;  
+Composer, pianist&lt;br&gt;  
+b. 1810 - d. &lt;del&gt;1849&lt;/del&gt;aaaaaaggghhh!!!  
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Pair programming is the primary learning model for the content-rich junior half of the Hack Reactor immersion program (learn more about the curriculum in my post about What We Learn at Hack Reactor). I remember that on my second day as a junior, I could already taste that pair programming was part of Hack Reactor’s secret sauce, and I wrote a draft of this blogpost. Now I’m a senior, watching the new juniors hash out their ideas at the pairing stations, and I feel it’s time edit and post.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Driver-navigator pair programming is a learning exercise that teaches you how to verbalize your progrmaming thoughts. This post is mostly about the educational usefulness. At the end of this post, I'll discuss real professional situations where this workflow can help a team get better results.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/03/IMAG1050.jpg" alt="Pair Programming"&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s how it works: students find partners and sit as a pair in front of a duplicated monitor. One partner (the driver) types on her keyboard, the other (the navigator) talks out loud about his ideas for how to code the solution. The navigator is keeping up a constant chatter and bouncing ideas off the driver. If the navigator gets stuck and the driver has a good idea for how to proceed, the driver doesn’t type it herself - I like to call this “drive-igating". Drive-igating is risky because the navigator might lose engagement and not come out understanding the code. Instead, the driver can prompt the navigator through questioning, whiteboarding, or whatever fits her personal style. If there’s a true impasse, the two can switch roles: the driver becomes navigator, and explains her solution while her partner types.&lt;/p&gt;
+
+&lt;p&gt;This may sound like a lot of talking and not a lot of coding, which raises a question:&lt;/p&gt;
+
+&lt;h6 id="whatlanguagedidwecomeheretolearnanyway"&gt;What language did we come here to learn, anyway?&lt;/h6&gt;
+
+&lt;p&gt;It sounds silly to ask. We came here to learn JavaScript and the libraries and frameworks that are driving its renaissance. I am approaching Hack Reactor with some coding experience, but I’m also have experience learning Chinese language in total-immersion settings. Coming to Hack Reactor, I imagined that it would be total-immersion with code as the target language: a &lt;a href="http://en.wikipedia.org/wiki/Middlebury_College_Language_Schools"&gt;Middlebury&lt;/a&gt; for JS and its libraries and frameworks.&lt;/p&gt;
+
+&lt;p&gt;It turns out my analogy needs some tweaking. Never fear, we will come out Hack Reactor as JavaScript-native programmers. More importantly, though, we will know how to think as a software engineer, how to solve a problem, how to comment and organize code, how to use words that express our thought process, how to use &lt;a href="https://github.com/sdwebster"&gt;GitHub&lt;/a&gt; to manage workflow across a team - skills that turn out to be super critical, with big consequences in debugging process (a.k.a. 80-90% of all programming). You could equally argue that our target language is a nebulous mix of English and JavaScript called “pseudocode”.&lt;/p&gt;
+
+&lt;h6 id="pseudocodethedownbeatthatholdspairprogrammingtogether"&gt;Pseudocode, the downbeat that holds pair programming together&lt;/h6&gt;
+
+&lt;p&gt;Pseudocode is the interface between the intuitive, “navigator” side of programming and the detailed, syntax-heavy “driver” side. In pair programming, we role-play these two tasks. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 1. The navigator starts with big-picture notions, the inklings of an algorithm.
+// 2. She converts these ideas into a pseudocode and expresses them to the driver. This step is important.
+// 3. The driver then translates from pseudocode into real code according to his mastery of JavaScript syntax.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The pseudocode (step 2) is the glue that holds the two roles together. After each minor victory or total impasse, we swap roles, ensuring that an intuitive thinker must sometimes deal with the misplaced semicolons, and a details-oriented thinker must practice thinking big-picture.&lt;/p&gt;
+
+&lt;p&gt;Speaking of pictures, here's what Step 1 looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/03/IMAG1038.jpg" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Then, move to Step 2:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Takes an array of strings and puts them all in ALL CAPS
+var arrayToALLCAPS = function(arr){
+  // Store results in new array
+  // Loop through input array
+    // Take element, upper-case it, and put it in the result array
+  // Return the result array
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice how I structured the pseudocode as if it were real code. Protip: In the Sublime text editor, use ⌘+'[' and ⌘+']' to indent in outdent. It's better than SHIFT+TAB and ⌘+SHIFT+TAB because it works no matter whether you cursor is at the start of the line.&lt;/p&gt;
+
+&lt;p&gt;Finally, Step 3. Write the code beneath the pseudocode. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Takes an array of strings and puts them all in ALL CAPS
+var arrayToALLCAPS = function(arr){
+  // Store results in new array
+  var result = [];
+  // Loop through input array
+  for ( var i = 0; i &amp;lt; arr.length; i++ ){
+    // Take element, upper-case it, and put it in the result array
+    result.push( arr[i].toUpperCase() );
+  }
+  // Return the result array
+  return result;
+};
+// TEST:
+console.log(arrayToALLCAPS(['Your', 'YouTube', 'video', 'is', 'lame']));
+// logs [ 'YOUR', 'YOUTUBE', 'VIDEO', 'IS', 'LAME' ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bonus step: refactor using a native JavaScript Array method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Takes an array of strings and puts each one in ALL CAPS
+var arrayToALLCAPS = function(arr){
+  return arr.map(function(string){
+    return arrayElement.toUpperCase();
+  });
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now it's looking nice!&lt;/p&gt;
+
+&lt;h6 id="heresmyanalogy"&gt;Here's my analogy&lt;/h6&gt;
+
+&lt;p&gt;Let’s say you want to master a piano piece, for example Chopin’s &lt;em&gt;Fantasie-Impromptu in C# minor&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/03/Fantasie-Impromtpu.gif" alt="Fantasie-Impromptu"&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s a lot going on here. Chopin would use his left hand like a navigator, laying out the overall chord structure with broad patterns such as the sweeping arpeggios you see above. His right hand, meanwhile, would serve as driver, wowing the audience with technique: breakneck speeds, cadenzas full of irregular rhythms, chromatic runs which, upon compiling, land on perfect resolutions. If you, the pianist, try to do this all at once on first reading, then unless you are as good at it as &lt;a href="https://www.youtube.com/watch?v=rDzXCttFTWs"&gt;this guy&lt;/a&gt;, you will fail. You will probably have to break it down into these steps:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 1. Learn to play the left hand part really well.
+// 2. Learn to play the right hand really well.
+// 3. Counting very carefully on the downbeats, bring the two hands together.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Actually, forget what I just said. I guarantee you that when the pianist in the video was starting out with &lt;em&gt;Fantasie-Impromptu&lt;/em&gt;, he had to use these steps, too. In fact, I can only think of one other algorithm that might possibly work:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 1. Learn to play the *right* hand part really well.
+// 2. Learn to play the *left* hand really well.
+// 3. Counting very carefully on the downbeats, bring the two hands together.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The interface between the left and right hands is the macro-beat (in step 3). If you’ve played much Chopin, you know that the task of bring the two hands together is non-trivial. The left hand in &lt;em&gt;Fantasie-Impromptu&lt;/em&gt; is playing triplets while the right flies around in quadruplets. Just try tapping your two index fingers on the table in front of you in this 3-against-4 pattern, and you can imagine how hard this is. Aligning the two rhythms a frustrating stop-and-start struggle, and you have to really feel that downbeat.&lt;/p&gt;
+
+&lt;p&gt;Programming is like &lt;em&gt;Fantasie-Impromptu&lt;/em&gt;, and pseudocode is the downbeat. You need to be really good at translating English to pseudocode, and also really good at translating pseudocode to JavaScript. You can try to do it all at once, or you can leap forward in your learning of programming is to isolate these two separate mental functions and master each on its own. In the senior portion, we practice “white-boarding” interviews, which is a similar exercise: you have to first explain your thought-process in language-agnostic pseudocode before introducing any JavaScript.  &lt;/p&gt;
+
+&lt;h6 id="ipromisedyouzombies"&gt;I promised you zombies…&lt;/h6&gt;
+
+&lt;p&gt;I’ve posted before about this aspect of &lt;a href="http://localhost:2368/what-we-learn-at-hack-reactor/"&gt;Hack Reactor’s secret sauce&lt;/a&gt;. They implement a pretty simple algorithm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 1. Market you school to students with relevant prior experience (or just plenty of aptitude)
+// 2. Do not specify what *kind* of prior experience
+// 3. Bring them all to San Francisco and tell them to pair with a new partner every two days
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aspiring programmers come to Hack Reactor with a diversity of life stories. Some majored in CS, or at least took a few courses. Some worked before as front-end web designers. Some have worked at internet startups in non-coding roles. Some have experience whose connection to software engineering is not as obvious, but they can make uncanny analogies to their previous career. Each student has a vast experience which is made up of little tiny details that they couldn’t possibly rattle off each time they shake a classmate’s hand. How do we all emerge 13 weeks later as full-stack engineers? Let's analyze by tracking the path of each tiny piece of information across the system.&lt;/p&gt;
+
+&lt;p&gt;Imagine that an underpaid freelancer named X4898/QV-Strain001 Patient Zero enrolls in Hack Reactor. As it happens, bright young X/Q-SPZ is the only student in her cohort who knows that in the Sublime text editor, CTRL+⌘+UP and CTRL+⌘+DOWN are amazing shortcuts that will exponentiate your productivity and make you fall in love with Sublime. On the first day of class, she pairs up with a remedial Windows user (like myself) who doesn’t know what the squiggly key is supposed to do. He sees her make lines of code zip around to where she wants them, and asks her what the trick is. She shows him the new key binding, then bites into his skull and devours some brains.&lt;/p&gt;
+
+&lt;p&gt;In the next sprint, each of them finds a new unsuspecting partner to pair with. Within a week, code is flying like mad across the shared monitors of the pairing stations, and scary quarantine signs start to appear. One classmate who did ecology research in a previous life plots out a graph to explain all the screaming, and sees that it resembles a logistic growth curve:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/03/Logistic-Growth.gif" alt="Logistic Growth"&gt;&lt;/p&gt;
+
+&lt;p&gt;Soon, the entire cohort will be infected.&lt;/p&gt;
+
+&lt;h6 id="pairprogrammingfortherealworld"&gt;Pair Programming for the Real World&lt;/h6&gt;
+
+&lt;p&gt;Pair programming works great for learning to code. I’d be curious to work at a company that uses it for building real production code. There are definitely drawbacks: sometimes, the most advanced member of a pair has to slow down to help a less experienced partner reason through a problem. Still, a project manager can think of this as a short-term sacrifice. Last week, my 4-person team for a senior project decided to split into two pairs and spend a few days pair-programming. I believe the outcome by the end of the week was net positive: we got more features done, and it made for a smoother product.&lt;/p&gt;
+
+&lt;p&gt;This model definitely has potential outside the academic setting. It keeps the whole team on the same page, and ensures that everyone is engaged. Paired team members emulate each other’s strengths and help each other address weaknesses. Pair programming may reduce turnover, because as software engineers we are happier when we are learning, and many of us also enjoy teaching. Even when one developer does take an offer at another company, the remaining team members will know the code base. I can think of at least one team situation in my past life in consulting where I wish I had known about the driver-navigator model. We were managing a large base of legacy SAS code, and some intentional pairing could have really increased our long-term effectiveness.&lt;/p&gt;
+
+&lt;p&gt;Then again, sometimes time is too short. Please do not attempt to learn driver-navigator pair programming if you are bunkered down right now at the CDCs in Atlanta on the daring team of programmers and epidemiologists working around the clock to sequence the X4898/QV-Strain001 and create a vaccine before time runs out.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If you have tasty brains and want to be infected with a sweet productivity tip for Sublime, check out &lt;a href="http://localhost:2368/run-js-code-in-sublime/"&gt;my post about build systems&lt;/a&gt;. If you have a productivity tip of your own that you’d like to share, leave a comment below: I’m not immune to suggestions.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title>What we learn at Hack Reactor</title><description>&lt;p&gt;&lt;i&gt; This post stems from an e-mail I wrote two weeks ago at the midpoint of Hack Reactor, a software engineering immersion program in San Francisco. Back when I was applying to Hack Reactor, nobody on the internet could nail down the exact content of the 13-week course. That's because Hack&lt;/i&gt;&lt;/p&gt;</description><link>http://localhost:2368/what-we-learn-at-hack-reactor/</link><guid isPermaLink="false">5ac18256-7c95-4444-9f50-da338ad57a58</guid><dc:creator>Steve Webster</dc:creator><pubDate>Sun, 29 Mar 2015 19:19:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;i&gt; This post stems from an e-mail I wrote two weeks ago at the midpoint of Hack Reactor, a software engineering immersion program in San Francisco. Back when I was applying to Hack Reactor, nobody on the internet could nail down the exact content of the 13-week course. That's because Hack Reactor is constantly adding and removing content based on our feedback and on industry trends. Let me offer you the "Hack Reactor Curriculum, as of March 2015".&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;If you want to keep up with the latest improvements to the Hack Reactor curriculum, check out &lt;a href="http://www.quora.com/search?q=hack+reactor"&gt;Quora&lt;/a&gt; and the blogs of current and recent students.&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;Before arriving at Hack Reactor we completed a long precourse curriculum. Two precourse exercises that stand out in my memory are (1) re-implement a core JavaScript library for functional programming called &lt;a href="http://underscorejs.org/"&gt;Underscore.js&lt;/a&gt;, and (2) build a stripped-down version of the Twitter front-end. Everyone came into Hack Reactor with different strengths and experience. For example, some had worked in front-end development, others (including myself) had studied some computer science.  Consequently, some precourse students found the mock-Underscore very challenging and the mock-Twitter fairly straightfoward, and some (including myself) had it vice versa.&lt;/p&gt;
+
+&lt;p&gt;These differences in our backgrounds are one of the secret sauces of Hack Reactor (which is fairly unique among software engineering immersion programs because it's aimed at students with some prior coding experience). For each topic we study, there are some students who already have some exposure. We all have a chance to teach and learn from each other &lt;a href="http://localhost:2368/run-js-code-in-sublime/"&gt;all sorts of cool techniques&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first six weeks we focused on pair-programming, which is an excellent configuration for fast learning (&lt;em&gt;see my post on &lt;a href="http://localhost:2368/pair-programming-chopin-and-zombies/"&gt;Pair Programming, Chopin, and Zombies&lt;/a&gt;&lt;/em&gt; ). We quickly nailed down "vanilla" JavaScript, and then took a whirlwind tour through the principle libraries that are driving the JavaScript renaissance, with names like Underscore, CoffeeScript, D3, Bootstrap, Node, Express, Bookshelf, Mongoose, Backbone, and Angular. There are lectures and solution Q/A's during the daytime. In the evenings, we've had guests come talk to us from major players such as Mozilla, npm, and Firebase. The goal has been rapid exposure, not total mastery. The knowledge will sink in as we use it. &lt;i&gt;Update: I wrote that last sentence hoping it would come true. Only two weeks later, I quite sure of it. For example, I understand the "MEAN stack" (MongoDB, Express, Angular, Node)  much better after using it for our Legacy project. &lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we are on a semi-break week, and I'm getting chance to take care of myself and do whatever I've been neglecting. We're expected to be putting in about %50 this week on our first group project (the "Greenfield"), and it's helpful (though not required) that most of my 4-person team stayed around SF for most of the week.&lt;/p&gt;
+
+&lt;p&gt;In the second half of Hack Reactor, we will code three major projects in groups of about four students. In the "Greenfield" project, we'll hack together our first clunky product and get more familiar with "git", a popular tool for collaboration and version control. Then, all the groups will swap products: each group will inherit another group's code for their "Legacy" project, which is supposed to teach us how to approach code that someone else wrote. Finally, we'll form new groups and build the capstone "Thesis" project. &lt;/p&gt;
+
+&lt;p&gt;A few students among the earliest Hack Reactor cohorts built Thesis projects tied to some real-world company in a sort of internship arrangement. This sounded really good on paper, but it's no longer an option. Experience showed that Hack Reactor can deliver us the best and most consistent results by keeping the Thesis in-house. We'll have plenty of time to work for real companies, and get paid to do it.&lt;/p&gt;
+
+&lt;p&gt;There will be comprehensive coaching on the job search process built into the last few weeks of curriculum. Potential employers will be able to see code for all our projects on &lt;a href="https://github.com/sdwebster"&gt;GitHub&lt;/a&gt;, and we'll demo the Thesis products to employers at the "hiring days" job fair.&lt;/p&gt;
+
+&lt;p&gt;I am loving California so far. I love my classmates, my housemates (who are also doing Hack Reactor), and the other people I've met here. San Francisco has that West Coast vibe I've always heard of: open, relaxed, groovy. I'll likely be out here for a long while, although who knows where the job search will take me. I'll surely go back to Boston to visit often, and I promise you I will never let "hella" replace my native "wicked". &lt;/p&gt;
+
+&lt;p&gt;Hack Reactor offers a 13-week internship program called "Hacker-in-Residence" that I might apply to. HiRs are part-time Hack Reactor employees who dedicate the other 50% of their time to their own projects and self-study. HiRs do all sorts of odd-jobs. Some help students who get stuck when coding; some teach "toy problem" brainteasers; some shepherd the student body; some assist the new &lt;a href="http://"&gt;Hack Reactor Remote-Beta&lt;/a&gt; program; and some get involved with Hack Reactor's outreach efforts in Bay Area prisons and in Kenya. I think that any of these tasks may be a fun change-of-pace before entering market for full-time software jobs. I enjoy teaching/mentoring almost as much as I enjoy learning, and an HiR gets to do both. But on the other hand, it's also a little tempting to go ahead and use what I learned in the Real World right away, without doing HiR first. &lt;i&gt;(If you become an HiR, you skip the hiring days for your own classmates. Instead, you attend the next cohort's hiring days when your HiR contract is ending.)&lt;/i&gt; Either way is a win. Either way, Hack Reactor has shown me many cool directions for self-study.&lt;/p&gt;
+
+&lt;p&gt;And no, Mom and Dad, I won't become the malicious, security-thwarting kind of "hacker" you read about in the news. Here, "to hack" simply means "to write code".&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;If you want to keep up with the latest improvements to the Hack Reactor curriculum, check out &lt;a href="http://www.quora.com/search?q=hack+reactor"&gt;Quora&lt;/a&gt; and the blogs of current and recent students.&lt;/i&gt;&lt;/p&gt;</content:encoded></item><item><title>What does "irruncibly" mean?</title><description>&lt;p&gt;"Irruncibly" derives from "&lt;a href="http://en.wikipedia.org/wiki/Runcible"&gt;runcible&lt;/a&gt;", a popular nonsense word invented by Edward Lear and adopted by the likes of Thomas Pynchon in the "runcible spoon" duels of &lt;i&gt;Gravity's Rainbow&lt;/i&gt; and Donald Knuth in his "Revised Unified New Compiler with IT Basic Language Extended (RUNCIBLE)". From these connections, you can see  that&lt;/p&gt;</description><link>http://localhost:2368/what-does-irruncibly-mean/</link><guid isPermaLink="false">07d29a07-6542-4244-9855-7753e6249bd3</guid><dc:creator>Steve Webster</dc:creator><pubDate>Sat, 28 Mar 2015 16:48:44 GMT</pubDate><content:encoded>&lt;p&gt;"Irruncibly" derives from "&lt;a href="http://en.wikipedia.org/wiki/Runcible"&gt;runcible&lt;/a&gt;", a popular nonsense word invented by Edward Lear and adopted by the likes of Thomas Pynchon in the "runcible spoon" duels of &lt;i&gt;Gravity's Rainbow&lt;/i&gt; and Donald Knuth in his "Revised Unified New Compiler with IT Basic Language Extended (RUNCIBLE)". From these connections, you can see  that "irruncibly" is not just a fun word that runs off your tongue, but also a perfect name for a fun technical blog about JavaScript: powered by imagination, yet grounded in painstaking details.&lt;/p&gt;
+
+&lt;p&gt;Whenever in doubt, you can affirm any statement that your friends make with a hearty "Irruncibly so!"&lt;/p&gt;
+
+&lt;p&gt;I made this blog for free. See &lt;a href="http://localhost:2368/how-to-make-a-blog-for-free/"&gt;my post about how I did it&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title>Run JS code in Sublime</title><description>&lt;p&gt;Let's imagine you enjoy writing JavaScript in a text editor like Sublime 2.0, but you wish you could run the code right there in Sublime. Perhaps you find yourself copy-pasting back and forth to &lt;a href="http://localhost:2368/run-js-code-in-sublime/repl.it"&gt;repl.it&lt;/a&gt;, &lt;a href="http://localhost:2368/run-js-code-in-sublime/jsbin.com"&gt;jsbin.com&lt;/a&gt;, or the plain old console in your browser, all so that&lt;/p&gt;</description><link>http://localhost:2368/run-js-code-in-sublime/</link><guid isPermaLink="false">784ddbcd-f438-4af1-a1ab-f6b79ef77646</guid><dc:creator>Steve Webster</dc:creator><pubDate>Thu, 26 Mar 2015 18:56:36 GMT</pubDate><content:encoded>&lt;p&gt;Let's imagine you enjoy writing JavaScript in a text editor like Sublime 2.0, but you wish you could run the code right there in Sublime. Perhaps you find yourself copy-pasting back and forth to &lt;a href="http://localhost:2368/run-js-code-in-sublime/repl.it"&gt;repl.it&lt;/a&gt;, &lt;a href="http://localhost:2368/run-js-code-in-sublime/jsbin.com"&gt;jsbin.com&lt;/a&gt;, or the plain old console in your browser, all so that you can run a few tests. This is a common wish among students at Hack Reactor: Sublime is configured on our workstations when we pair program &lt;em&gt;(see my post concerning &lt;a href="http://localhost:2368/pair-programming-chopin-and-zombies/"&gt;Pair Programming, Chopin, and Zombies&lt;/a&gt;)&lt;/em&gt;, and we want to use Sublime for our toy problems and assessments. Where is the JavaScript equivalent of building/making/compiling on your own machine?&lt;/p&gt;
+
+&lt;p&gt;Loosely following "Method 2 of 2" in &lt;a href="http://www.wikihow.com/Create-a-Javascript-Console-in-Sublime-Text"&gt;this wikihow article&lt;/a&gt;, I set up a Sublime build system that I can run with no internet, no browser, and no copy-pasting: all I need to do is "Command+b" (on Windows, that's "Ctrl+b") inside Sublime.&lt;/p&gt;
+
+&lt;p&gt;The steps:&lt;/p&gt;
+
+&lt;p&gt;Download and install &lt;a href="https://nodejs.org/"&gt;node.js&lt;/a&gt;. You can check whether you already have it by running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which node
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is also the command to figure out where node.js is saved on your machine. It should return something like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;/usr/local/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Open Sublime, go to the menu for "Tools/Build System/New Build System", and paste in this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+"cmd": ["/usr/local/bin/node", "$file"],
+"selector": "source.js"
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above code worked for my machine, because of where I saved node.js. The code on wikihow differs slightly:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+"cmd": ["node", "$file"],
+"selector": "source.js"
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Play around with it to get it right for your file structure and maybe your version of Sublime. I'm on Sublime 2.0.2.&lt;/p&gt;
+
+&lt;p&gt;Once you've pasted in the code snippet, save the file as "node.sublime-build" in the User folder that pops up as the default location. &lt;i&gt;(In MacOS, the folder's precise address is "...Users/Steve/Library/Application Support/Sublime Text 2/Packages/User", but "/Library/" is hidden in Finder, so you may have some trouble orienting yourself. Just save it in the default location).&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;The next time you use Sublime to edit a JavaScript file, you can tell Sublime about your new build system for js. Make sure you've saved you file with the *js. extention, then select the menu option for "Tools/Build System/node". From this moment forth, all *.js files will default to your new build system!&lt;/p&gt;
+
+&lt;p&gt;Now, I can use a workflow for toy problems that looks something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var reverseArray = function(arr){
+  return arr.reduceRight(function(newArr, element){
+    return newArr.concat(element);
+  }, []);
+};
+
+// TESTS
+console.log(reverseArray([1,2,3])); // logs [3,2,1]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This way, I can put the tests right below the code being tested, and just "Command+b" when I want to see some results (and if I want the build window to go away from the bottom of my screen, I can just press "ESC"). Now, that's what I call convenient! As a friend of mine wrote once in his gchat status:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I'm a lot happier if a function and its tests fit together on the same screen.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;He must have been having a good day. Now you can have a good day, too.&lt;/p&gt;
+
+&lt;p&gt;If you want to pull in external library, just save it in a nearby folder and add a statement that looks like the first line here:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var _ = require("../lib/underscore.js");
+console.log(_.reduce([1, 2, 3], function(memo, item){
+  return memo + " " + item;
+}), "test test test"); // logs "1 2 3 test test test"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This build system is great for ad hoc tests on stand-alone files. Sandbox sites have their own distinct advantages, such as &lt;a href="http://localhost:2368/run-js-code-in-sublime/jsbin.com"&gt;jsbin.com&lt;/a&gt;, which lets you interact with HTML/CSS. For any larger repo spread across multiple files, you're going to want to learn about serious testing libraries such as &lt;a href="http://mochajs.org/"&gt;mocha.js.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;If you read through my code examples and you want to learn more about fun clever functions like reduce, come to the upcoming series of talks that Noah Sluss and I will deliver on functional programming with JavaScript.&lt;/i&gt;&lt;/p&gt;</content:encoded></item><item><title>Welcome to the new "irruncibly"</title><description>&lt;p&gt;My new blog went live today. I created it for free using Ghost on free GitHub hosting. If you want to do the same, you can follow &lt;a href="http://localhost:2368/how-to-make-a-blog-for-free/"&gt;these instructions&lt;/a&gt;. To learn more about the name of the blog, read my post &lt;a href="http://localhost:2368/what-does-irruncibly-mean/"&gt;What does "irruncibly" mean?&lt;/a&gt;&lt;/p&gt;</description><link>http://localhost:2368/welcome-to-the-new-irruncibly/</link><guid isPermaLink="false">92efe9a1-de23-40af-a330-5d5aa57df934</guid><dc:creator>Steve Webster</dc:creator><pubDate>Wed, 25 Mar 2015 06:21:42 GMT</pubDate><content:encoded>&lt;p&gt;My new blog went live today. I created it for free using Ghost on free GitHub hosting. If you want to do the same, you can follow &lt;a href="http://localhost:2368/how-to-make-a-blog-for-free/"&gt;these instructions&lt;/a&gt;. To learn more about the name of the blog, read my post &lt;a href="http://localhost:2368/what-does-irruncibly-mean/"&gt;What does "irruncibly" mean?&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>

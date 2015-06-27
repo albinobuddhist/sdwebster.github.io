@@ -1,0 +1,234 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Run JS code in Sublime</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=752b2c7e78">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://localhost:2368/run-js-code-in-sublime/">
+    
+    <meta property="og:site_name" content="irruncibly">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Run JS code in Sublime">
+    <meta property="og:description" content="Let's imagine you enjoy writing JavaScript in a text editor like Sublime 2.0, but you wish you could run the code right there in Sublime. Perhaps you find yourself copy-pasting back and forth to repl.it, jsbin.com, or...">
+    <meta property="og:url" content="http://localhost:2368/run-js-code-in-sublime/">
+    <meta property="article:published_time" content="2015-03-26T18:56:36.114Z">
+    <meta property="article:modified_time" content="2015-04-04T18:05:24.648Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Run JS code in Sublime">
+    <meta name="twitter:description" content="Let's imagine you enjoy writing JavaScript in a text editor like Sublime 2.0, but you wish you could run the code right there in Sublime. Perhaps you find yourself copy-pasting back and forth to repl.it, jsbin.com, or...">
+    <meta name="twitter:url" content="http://localhost:2368/run-js-code-in-sublime/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "irruncibly",
+    "author": {
+        "@type": "Person",
+        "name": "Steve Webster",
+        "image": "http://localhost:2368/content/images/2015/04/last_autumn_hike.jpeg",
+        "url": "http://localhost:2368/author/steve",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Run JS code in Sublime",
+    "url": "http://localhost:2368/run-js-code-in-sublime/",
+    "datePublished": "2015-03-26T18:56:36.114Z",
+    "dateModified": "2015-04-04T18:05:24.648Z",
+    "description": "Let&#x27;s imagine you enjoy writing JavaScript in a text editor like Sublime 2.0, but you wish you could run the code right there in Sublime. Perhaps you find yourself copy-pasting back and forth to repl.it, jsbin.com, or..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="irruncibly" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://localhost:2368">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="http://localhost:2368/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Run JS code in Sublime</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-03-26">26 March 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Let's imagine you enjoy writing JavaScript in a text editor like Sublime 2.0, but you wish you could run the code right there in Sublime. Perhaps you find yourself copy-pasting back and forth to <a href="http://127.0.0.1:2368/run-js-code-in-sublime/repl.it">repl.it</a>, <a href="http://127.0.0.1:2368/run-js-code-in-sublime/jsbin.com">jsbin.com</a>, or the plain old console in your browser, all so that you can run a few tests. This is a common wish among students at Hack Reactor: Sublime is configured on our workstations when we pair program <em>(see my post concerning <a href="../pair-programming-chopin-and-zombies/">Pair Programming, Chopin, and Zombies</a>)</em>, and we want to use Sublime for our toy problems and assessments. Where is the JavaScript equivalent of building/making/compiling on your own machine?</p>
+
+<p>Loosely following "Method 2 of 2" in <a href="http://www.wikihow.com/Create-a-Javascript-Console-in-Sublime-Text">this wikihow article</a>, I set up a Sublime build system that I can run with no internet, no browser, and no copy-pasting: all I need to do is "Command+b" (on Windows, that's "Ctrl+b") inside Sublime.</p>
+
+<p>The steps:</p>
+
+<p>Download and install <a href="https://nodejs.org/">node.js</a>. You can check whether you already have it by running:</p>
+
+<pre><code>$ which node
+</code></pre>
+
+<p>This is also the command to figure out where node.js is saved on your machine. It should return something like</p>
+
+<pre><code>&gt;&gt;/usr/local/bin/node
+</code></pre>
+
+<p>Open Sublime, go to the menu for "Tools/Build System/New Build System", and paste in this code:</p>
+
+<pre><code>{
+"cmd": ["/usr/local/bin/node", "$file"],
+"selector": "source.js"
+}
+</code></pre>
+
+<p>The above code worked for my machine, because of where I saved node.js. The code on wikihow differs slightly:</p>
+
+<pre><code>{
+"cmd": ["node", "$file"],
+"selector": "source.js"
+}
+</code></pre>
+
+<p>Play around with it to get it right for your file structure and maybe your version of Sublime. I'm on Sublime 2.0.2.</p>
+
+<p>Once you've pasted in the code snippet, save the file as "node.sublime-build" in the User folder that pops up as the default location. <i>(In MacOS, the folder's precise address is "...Users/Steve/Library/Application Support/Sublime Text 2/Packages/User", but "/Library/" is hidden in Finder, so you may have some trouble orienting yourself. Just save it in the default location).</i></p>
+
+<p>The next time you use Sublime to edit a JavaScript file, you can tell Sublime about your new build system for js. Make sure you've saved you file with the *js. extention, then select the menu option for "Tools/Build System/node". From this moment forth, all *.js files will default to your new build system!</p>
+
+<p>Now, I can use a workflow for toy problems that looks something like this:</p>
+
+<pre><code>var reverseArray = function(arr){
+  return arr.reduceRight(function(newArr, element){
+    return newArr.concat(element);
+  }, []);
+};
+
+// TESTS
+console.log(reverseArray([1,2,3])); // logs [3,2,1]
+</code></pre>
+
+<p>This way, I can put the tests right below the code being tested, and just "Command+b" when I want to see some results (and if I want the build window to go away from the bottom of my screen, I can just press "ESC"). Now, that's what I call convenient! As a friend of mine wrote once in his gchat status:</p>
+
+<blockquote>
+  <p>I'm a lot happier if a function and its tests fit together on the same screen.</p>
+</blockquote>
+
+<p>He must have been having a good day. Now you can have a good day, too.</p>
+
+<p>If you want to pull in external library, just save it in a nearby folder and add a statement that looks like the first line here:</p>
+
+<pre><code>var _ = require("../lib/underscore.js");
+console.log(_.reduce([1, 2, 3], function(memo, item){
+  return memo + " " + item;
+}), "test test test"); // logs "1 2 3 test test test"
+</code></pre>
+
+<p>This build system is great for ad hoc tests on stand-alone files. Sandbox sites have their own distinct advantages, such as <a href="http://127.0.0.1:2368/run-js-code-in-sublime/jsbin.com">jsbin.com</a>, which lets you interact with HTML/CSS. For any larger repo spread across multiple files, you're going to want to learn about serious testing libraries such as <a href="http://mochajs.org/">mocha.js.</a></p>
+
+<p><i>If you read through my code examples and you want to learn more about fun clever functions like reduce, come to the upcoming series of talks that Noah Sluss and I will deliver on functional programming with JavaScript.</i></p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/steve/" style="background-image: url(../content/images/2015/04/last_autumn_hike.jpeg)"><span class="hidden">Steve Webster's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/steve/">Steve Webster</a></h4>
+
+                    <p>Read <a href="../author/steve/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Run%20JS%20code%20in%20Sublime&amp;url=http://localhost:2368/run-js-code-in-sublime/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/run-js-code-in-sublime/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/run-js-code-in-sublime/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'irruncibly'; // required: replace example with your forum shortname
+        var disqus_identifier = '';
+     
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            // indentifier for extra reliability
+            var disqus_identifier = 'ghost-4';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://localhost:2368">irruncibly</a> © 2015</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="../public/jquery.js?v=752b2c7e78"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=752b2c7e78"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=752b2c7e78"></script>
+
+    <!-- copied in from https://irruncibly.disqus.com/admin/settings/universalcode/ 
+      on instructions from http://support.ghost.org/add-disqus-to-my-ghost-blog/--> 
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'irruncibly';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>
